@@ -1,4 +1,5 @@
-package tuan4_M4_PhongHoc_KhongInterface;
+
+package thuchanhbuoi5;
 
 import java.util.Scanner;
 
@@ -20,37 +21,37 @@ public class testPhongHoc {
 	}
 	private static void tieuDeMenu() {
 		System.out.println("=======================================================");
-		System.out.println("\t\t\tquản lý phòng học".toUpperCase());
+		System.out.println("\t\tquan ly phong hoc".toUpperCase());
 		System.out.println("=======================================================");
-		System.out.println("0. Nhập dữ liệu Phòng Học.");
-		System.out.println("1. Nhập thêm Phòng Học.");
-		System.out.println("2. Tìm kiếm Phòng Học.");
-		System.out.println("3. In danh sách Phòng Học.");
-		System.out.println("4. In danh sách Phòng Học đạt chuẩn.");
-		System.out.println("5. Sắp xếp danh sách tăng dần theo cột dãy nhà.");
-		System.out.println("6. Sắp xếp danh sách giảm dần theo cột diện tích.");
-		System.out.println("7. Sắp xếp danh sách tăng dần theo cột số bóng đèn.");
-		System.out.println("8. Cập nhật số máy tính cho một phòng máy tính.");
-		System.out.println("9. Xóa một Phòng Học.");
-		System.out.println("10. In ra tổng số phòng học.");
-		System.out.println("11. In danh sách các phòng máy có 60 máy.");
-		System.out.println("12. Thoát.");
+		System.out.println("0. Nhap kiem tra du lieu Phong Hoc.");
+		System.out.println("1. Nhap them Phong Hoc.");
+		System.out.println("2. Tim kiem Phong Hoc.");
+		System.out.println("3. In danh sach Phong Hoc.");
+		System.out.println("4. In danh sach Phong Hoc dat chuan.");
+		System.out.println("5. Sap xep danh sach tang dan theo cot day nha.");
+		System.out.println("6. Sap xep danh sach giam dan theo cot dien tich.");
+		System.out.println("7. Sap xep danh sach tang dan theo cot so bong đen.");
+		System.out.println("8. Cap nhat so may tinh cho mot phong may tinh.");
+		System.out.println("9. Xoa mot Phong Hoc.");
+		System.out.println("10. In ra tong so phong hoc.");
+		System.out.println("11. In danh sach cac phong may co 60 may.");
+		System.out.println("12. Thoat.");
 	}
 	private static void menuPhongHoc(DanhSachPhongHoc dsPhongHoc) {
 		
 		int chon = 0;
 		do {
 			tieuDeMenu();
-			System.out.println("Bạn chọn số?: ");
+			System.out.println("Ban chon ?: ");
 			try {
 				chon = sc.nextInt();
 			} catch (Exception e) {
-				System.out.println("Bạn vừa nhập không phải số!");
+				System.out.println("Ban vua nhap sai !");
 				throw null;
 			}
 
 			if(chon < 0 || chon > 12) {
-				System.out.println("Chọn sai! Chọn từ số(0 đến 12)!\nChọn lại: ");
+				System.out.println("Chon sai! Chon tu (0 đen 12)!\nChon lai: ");
 			}else {
 				switch (chon) {
 				case 1://1. Nhập mềm Phòng Học.
@@ -107,44 +108,44 @@ public class testPhongHoc {
 	}
 
 	private static void nhapCungPhongHoc(DanhSachPhongHoc dsPhongHoc) {
-		PhongHoc phong1 = new PhongLyThuyet("ph1", "A", 200, 20, true);//phòng chuẩn
-		PhongHoc phong2 = new PhongLyThuyet("ph2", "B", 150, 20, false);
+		PhongHoc phong1 = new PhongLyThuyet("MB1", "A01", 200, 20, true);//phòng chuẩn
+		PhongHoc phong2 = new PhongLyThuyet("MB2", "A02", 150, 20, false);
 
-		PhongHoc phong3 = new PhongHocMayTinh("ph3", "C", 500, 55, 334);//phòng chuẩn
-		PhongHoc phong4 = new PhongHocMayTinh("ph4", "D", 500, 40, 200);
+		PhongHoc phong3 = new PhongHocMayTinh("MB3", "B01", 500, 55, 334);//phòng chuẩn
+		PhongHoc phong4 = new PhongHocMayTinh("MB4", "B02", 500, 40, 200);
 
-		PhongHoc phong5 = new PhongThiNghiem("ph5", "E", 400, 44, "Hóa học", 80, true);//phòng chuẩn
-		PhongHoc phong6 = new PhongThiNghiem("ph6", "F", 400, 44, "Thực Phẩm", 30, false);
+		PhongHoc phong5 = new PhongThiNghiem("MB5", "C01", 400, 44, "Hoa hoc", 80, true);//phòng chuẩn
+		PhongHoc phong6 = new PhongThiNghiem("MB6", "D01", 400, 44, "Vat ly", 30, false);
 		if(dsPhongHoc.themMotPhongHoc(phong1)) {
-			System.out.println("Thêm thành công: "+phong1.getMaPhong());
+			System.out.println("Them thanh cong: "+phong1.getMaPhong());
 		}else {
-			System.out.println("Thêm thất bại: "+phong1.getMaPhong()+" -Đã tồn tại!!" );
+			System.out.println("Them that bai: "+phong1.getMaPhong()+" -Đã tồn tại!!" );
 		}
 
 		if(dsPhongHoc.themMotPhongHoc(phong2)) {
-			System.out.println("Thêm thành công: "+phong2.getMaPhong());
+			System.out.println("Them thanh cong: "+phong2.getMaPhong());
 		}else {
-			System.out.println("Thêm thất bại: "+phong2.getMaPhong()+" -Đã tồn tại!!" );
+			System.out.println("Them that bai: "+phong2.getMaPhong()+" -Đã tồn tại!!" );
 		}
 		if(dsPhongHoc.themMotPhongHoc(phong3)) {
-			System.out.println("Thêm thành công: "+phong3.getMaPhong());
+			System.out.println("Them thanh cong: "+phong3.getMaPhong());
 		}else {
-			System.out.println("Thêm thất bại: "+phong3.getMaPhong()+" -Đã tồn tại!!" );
+			System.out.println("Them that bai: "+phong3.getMaPhong()+" -Đã tồn tại!!" );
 		}
 		if(dsPhongHoc.themMotPhongHoc(phong4)) {
-			System.out.println("Thêm thành công: "+phong4.getMaPhong());
+			System.out.println("Them thanh cong: "+phong4.getMaPhong());
 		}else {
-			System.out.println("Thêm thất bại: "+phong4.getMaPhong()+" -Đã tồn tại!!" );
+			System.out.println("Them that bai: "+phong4.getMaPhong()+" -Đã tồn tại!!" );
 		}
 		if(dsPhongHoc.themMotPhongHoc(phong5)) {
-			System.out.println("Thêm thành công: "+phong5.getMaPhong());
+			System.out.println("Them thanh cong: "+phong5.getMaPhong());
 		}else {
-			System.out.println("Thêm thất bại: "+phong5.getMaPhong()+" -Đã tồn tại!!" );
+			System.out.println("Them that bai: "+phong5.getMaPhong()+" -Đã tồn tại!!" );
 		}
 		if(dsPhongHoc.themMotPhongHoc(phong6)) {
-			System.out.println("Thêm thành công: "+phong6.getMaPhong());
+			System.out.println("Them thanh cong: "+phong6.getMaPhong());
 		}else {
-			System.out.println("Thêm thất bại: "+phong6.getMaPhong()+" -Đã tồn tại!!" );
+			System.out.println("Them that bai: "+phong6.getMaPhong()+" -Đã tồn tại!!" );
 		}
 		System.out.println("\n");
 	}
@@ -154,19 +155,19 @@ public class testPhongHoc {
 		int chon = 0;
 		do {
 			System.out.println("=======================================");
-			System.out.println("\t\t\tmenu chọn nhập mềm".toUpperCase());
+			System.out.println("\t\t\t menu chon nhap them ".toUpperCase());
 			System.out.println("=======================================");
-			System.out.println("1. Nhập Phòng Lý Thuyết.");
-			System.out.println("2. Nhập Phòng Máy Tính.");
-			System.out.println("3. Nhập Phòng Thí Nghiệm.");
-			System.out.println("Bạn chọn nhập?: ");
+			System.out.println("1. NHAP PHONG LY THUYET.");
+			System.out.println("2. NHAP PHONG MAY TINH.");
+			System.out.println("3. NHAP PHONG THI NGHIEM .");
+			System.out.println("Ban chon ?: ");
 			chon = sc.nextInt();
 			if(chon < 0 || chon > 3) {
-				System.out.println("Chọn sai! chọn lại!");
-				System.out.println("1. Nhập Phòng Lý Thuyết.");
-				System.out.println("2. Nhập Phòng Máy Tính.");
-				System.out.println("3. Nhập Phòng Thí Nghiệm.");
-				System.out.println("Bạn chọn nhập?: ");
+				System.out.println("Chon sai! chon lai!");
+				System.out.println("1. NHAP PHONG LY THUYET.");
+				System.out.println("2. NHAP PHONG MAY TINH.");
+				System.out.println("3. NHAP PHONG THI NGHIEM.");
+				System.out.println("Ban chon nhap?: ");
 			}else {
 				switch (chon) {
 				case 1:
@@ -198,36 +199,36 @@ public class testPhongHoc {
 	private static void nhapMemPhongHoc(DanhSachPhongHoc dsPhongHoc,int loaiPhong) {
 		int phongLyThuyet = 1, phongMayTinh = 2,phongThiNghiem = 3;
 		sc.nextLine();
-		System.out.println("Nhập mã phòng học: ");
+		System.out.println("Nhap ma phong hoc: ");
 		String checkMa = null;
-		String maPhongHoc = nhapChuoi(checkMa, "mã phòng học");
+		String maPhongHoc = nhapChuoi(checkMa, "ma phong hoc");
 
-		System.out.println("Nhập dãy nhà: ");
+		System.out.println("Nhap day nha: ");
 		String checkDayNha = null;
-		String dayNha = nhapChuoi(checkDayNha, "dãy nhà");
+		String dayNha = nhapChuoi(checkDayNha, "day nha");
 
-		System.out.println("Nhập diện tích: ");
+		System.out.println("Nhap dien tich: ");
 		long checkDientich = 0;
-		double dienTich = (double) nhapSo(checkDientich, "diện tích");
+		double dienTich = (double) nhapSo(checkDientich, "dien tich");
 
-		System.out.println("Nhập số bóng đèn: ");
+		System.out.println("Nhap so bong đen: ");
 		long checkSoBongDen = 0;
-		int bongDen = (int) nhapSo(checkSoBongDen, "số bóng đèn");
+		int bongDen = (int) nhapSo(checkSoBongDen, "so bong đen");
 
 		if(loaiPhong == phongLyThuyet) {
-			System.out.println("Có máy chiếu(1: Có, 2: Không): ");
+			System.out.println("Co may chieu(1: yes, 2: no ): ");
 			int kiemTraMayChieu = 0;
 			do {
 				try {
 					kiemTraMayChieu = sc.nextInt();
 				} catch (Exception e) {
-					System.out.println("Bạn vừa nhập kiểm tra có máy chiếu không phải số!");
+					System.out.println("Ban vua nhap kiem tra co may chieu khong phai so!");
 					throw null;
 				}
 
 				if(kiemTraMayChieu > 2 || kiemTraMayChieu < 1) {
-					System.out.println("Nhập sai!");
-					System.out.println("Có máy chiếu(1: Có, 2: Không): ");
+					System.out.println("Nhap sai!");
+					System.out.println("Co may chieu(1: yes, 2: no): ");
 				}else {
 					boolean coMayChieu = (kiemTraMayChieu == 1)?true:false;
 					PhongLyThuyet phongMoi = new PhongLyThuyet(maPhongHoc, dayNha, dienTich, bongDen, coMayChieu);
@@ -236,22 +237,22 @@ public class testPhongHoc {
 			}while(kiemTraMayChieu > 2 || kiemTraMayChieu < 1);
 
 		}else if (loaiPhong == phongMayTinh) {
-			System.out.println("Nhập vào số lượng máy tính: ");
+			System.out.println("Nhap  so may tinh: ");
 			long checkSoLuong = 0;
-			int soLuongMayTinh = (int) nhapSo(checkSoLuong, "Số lượng máy tính");
+			int soLuongMayTinh = (int) nhapSo(checkSoLuong, "So luong may tinh");
 			PhongHocMayTinh phongMoi = new PhongHocMayTinh(maPhongHoc, dayNha, dienTich, bongDen, soLuongMayTinh);
 			dsPhongHoc.themMotPhongHoc(phongMoi);
 		}else if (loaiPhong == phongThiNghiem) {
 			sc.nextLine();
-			System.out.println("Nhập thông tin Chuyên Ngành: ");
+			System.out.println("Nhap thong tin Chuyen Nganh: ");
 			String checkThongTinChuyenNganh = null;
 			String thongTinChuyenNganh = nhapChuoi(checkThongTinChuyenNganh, "thông tin chuyên ngành");
 
-			System.out.println("Nhập sức chứa: ");
+			System.out.println("Nhap suc chua: ");
 			long checkSucChua = 0;
-			int sucChua = (int) nhapSo(checkSucChua, "Sức chứa");
+			int sucChua = (int) nhapSo(checkSucChua, "Suc chua");
 
-			System.out.println("Có bồn rửa(1: Có, 2: Không): ");
+			System.out.println("Co bon rua(1: Co, 2: Khong): ");
 			int kiemTraBonRua = 0;
 			do {
 				try {
@@ -262,8 +263,8 @@ public class testPhongHoc {
 				}
 
 				if(kiemTraBonRua > 2 || kiemTraBonRua < 1) {
-					System.out.println("Nhập sai!");
-					System.out.println("Có bồn rửa(1: Có, 2: Không): ");
+					System.out.println("Nhap sai!");
+					System.out.println("Co bon rua(1: Co, 2: Khong): ");
 				}else {
 					boolean coBonRua = (kiemTraBonRua == 1)?true:false;
 					PhongThiNghiem phongMoi = new PhongThiNghiem(maPhongHoc, dayNha, dienTich, bongDen, thongTinChuyenNganh, sucChua, coBonRua);
@@ -280,16 +281,16 @@ public class testPhongHoc {
 	 */
 	private static void timPhongHoc(DanhSachPhongHoc dsPhongHoc) {
 		sc.nextLine();
-		System.out.println("Nhập mã phòng cần tìm: ");
+		System.out.println("Nhap ma phong can tim: ");
 		String maCheck = null;
-		String maCheckCanTim = nhapChuoi(maCheck, "Mã cần tìm");
+		String maCheckCanTim = nhapChuoi(maCheck, "Ma can tim");
 		PhongHoc objTim = dsPhongHoc.timPhongHoc(maCheckCanTim);
 		if(objTim !=null) {
-			System.out.println("Tìm thấy phòng: "+maCheckCanTim);
+			System.out.println("Tim thay phong: "+maCheckCanTim);
 			tieuDe();
 			System.out.println(objTim);
 		}else {
-			System.out.println("Không tìm thấy phòng: "+maCheckCanTim);
+			System.out.println("Khong tim thay phong: "+maCheckCanTim);
 		}
 
 		System.out.println("\n");
@@ -301,13 +302,13 @@ public class testPhongHoc {
 	 */
 	private static void xuatDanhSachPhong(DanhSachPhongHoc dsPhongHoc) {
 		if(!dsPhongHoc.layHetDanhSach().isEmpty()) {
-			System.out.println("\t\t\t\tdanh sách phòng học".toUpperCase());
+			System.out.println("\t\t\t\tdanh sach phong hoc".toUpperCase());
 			tieuDe();
 			for(PhongHoc phong: dsPhongHoc.layHetDanhSach()) {
 				System.out.println(phong);
 			}
 		}else {
-			System.out.println("Danh sách rỗng");
+			System.out.println("Danh sach rong");
 		}
 
 		System.out.println("\n");
@@ -318,7 +319,7 @@ public class testPhongHoc {
 	 * @param dsPhongHoc
 	 */
 	private static void xuatDanhSachPhongDatChuan(DanhSachPhongHoc dsPhongHoc) {
-		System.out.println("\t\t\t\tdanh sách phòng học chuẩn".toUpperCase());
+		System.out.println("\t\t\t\tdanh sach phong hoc chuan".toUpperCase());
 		tieuDe();
 		for(PhongHoc phong: dsPhongHoc.danhSachPhongDatChuan()) {
 			System.out.println(phong);
