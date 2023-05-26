@@ -23,7 +23,7 @@ public class testPhongHoc {
 		System.out.println("\t\t\tquản lý phòng học".toUpperCase());
 		System.out.println("=======================================================");
 		System.out.println("0. Nhập cứng Phòng Học.");
-		System.out.println("1. Nhập mềm Phòng Học.");
+		System.out.println("1. Nhập thêm Phòng Học.");
 		System.out.println("2. Tìm kiếm Phòng Học.");
 		System.out.println("3. In danh sách Phòng Học.");
 		System.out.println("4. In danh sách Phòng Học đạt chuẩn.");
