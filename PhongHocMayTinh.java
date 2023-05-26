@@ -1,4 +1,4 @@
-package tuan4_M4_PhongHoc_KhongInterface;
+package thuchanhbuoi5;
 
 public class PhongHocMayTinh extends PhongHoc{
 	private int soLuongMayTinh;
